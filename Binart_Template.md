@@ -34,7 +34,8 @@
     return l; // nums[l]就是>=target的第一个数
 }
 ```
-## 浮点二分需要设置精度
+### 浮点二分
+**需要设置精度**
 ```c++
    //precision表示精度
   while (right - left > precision) {
