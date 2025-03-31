@@ -1,6 +1,6 @@
 # Binary_search
 ## cpp内置函数：
-``` c++
+``` cpp
    vector<int> vec = {1, 3, 4, 5, 7, 9, 10};
     
     // 检查元素是否存在
@@ -15,7 +15,7 @@
     // 返回指向9的迭代器，即第一个>7的元素
 ```
 ### 自定义实现
-```c++
+```cpp
    int lowerbound(vector<int> &nums, int target){
     int l = 0;
     int r = nums.size() - 1;
@@ -36,7 +36,7 @@
 ```
 ### 浮点二分
 **需要设置精度**
-```c++
+```cpp
    //precision表示精度
   while (right - left > precision) {
         double mid = left + (right - left) / 2;
@@ -58,7 +58,7 @@
 如果 *check(mid)* 为 *false*（意味着 *mid* 太小了，无法达到），我们需要增大答案，*left = mid + 1*。
 
 ### 最大化最小值:找到一个最小的值 x，使得某个条件满足。
-```c++
+```cpp
 // 判断函数：检查mid是否可行
 bool check(int mid, vector<int>& arr, int additional_param) {
     // 实现具体的判断逻辑
@@ -89,7 +89,7 @@ int minimizeMaximum(vector<int>& arr, int param) {
 ```
 
 ### 最小化最大值：找到一个最大的值 x，使得某个条件满足。
-```c++
+```cpp
 // 判断函数：检查mid是否可行
 bool check(int mid, vector<int>& arr, int additional_param) {
     // 实现具体的判断逻辑
