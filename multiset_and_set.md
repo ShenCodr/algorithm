@@ -22,9 +22,10 @@ erase(start, end)：删除区间[start, end)内的元素。
 ### 查找
 ```cpp
 find(val)：返回第一个值为val的迭代器，未找到则返回end()。
-count(val)：返回值为`val`的元素数量。
+count(val)：返回值为val的元素数量。
 lower_bound(val)：返回第一个大于等于val的迭代器。
 upper_bound(val)：返回第一个大于val的迭代器。
+distance(it1,it2):返回it2和it1之间的迭代器的数量，不算it2。
 ```
 **multiset不支持直接修改元素，这里推荐先删除再插入新元素**
 
@@ -77,3 +78,22 @@ for (int i = 0; i < n; ++i) {
            return data.size() >= k ? *data.rbegin() : -1
   }
    ```
+# set
+**set的用法几乎和multiset一致，唯一不同的点在于set不允许重复元素插入**
+
+*`insert(value)`*
+
+*返回值：`pair<iterator, bool>`*
+
+*`first`：指向插入元素的迭代器*
+
+*`second`：插入是否成功（`true` 表示成功，`false` 表示元素已存在）*
+
+```cpp
+auto result = s.insert(10);
+if (result.second) {
+    cout << "插入成功！元素值: " << *result.first << endl;
+} else {
+    cout << "元素已存在！" << endl;
+}
+```
