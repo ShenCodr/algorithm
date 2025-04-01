@@ -24,25 +24,26 @@ for (int i = 0; i < nums.size(); i++) {
 **对 [L, R] 区间加 K：**
 **D[L] += K，D[R+1] -= K（若 R+1 ≤ n）**
 ```cpp
-int A[] = {0, 1, 2, 3, 4, 5}; // A[0..5]
-int D[6] = {0};
+const int SIZE = 6;
+int A[SIZE] = {0, 1, 2, 3, 4, 5}; // A[0..5]
+int D[SIZE] = {0};
 
 void build_diff() {
     D[0] = A[0];
-    for (int i = 1; i < A.size(); i++) {
+    for (int i = 1; i < SIZE; i++) {
         D[i] = A[i] - A[i-1];
     }
 }
 
 void update(int L, int R, int K) {
     D[L] += K;
-    if (R+1 <= n) D[R+1] -= K;
+    if (R+1 < SIZE) D[R+1] -= K;
 }
 
 // 通过差分数组还原数组
 void restore() {
     A[0]=D[0];
-    for (int i = 1; i < A.size(); i++) {
+    for (int i = 1; i < SIZE; i++) {
         A[i] = A[i-1] + D[i];
     }
 }
