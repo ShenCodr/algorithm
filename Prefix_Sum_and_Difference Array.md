@@ -41,7 +41,8 @@ void update(int L, int R, int K) {
 
 // 通过差分数组还原数组
 void restore() {
-    for (int i = 0; i < A.size(); i++) {
+    A[0]=D[0];
+    for (int i = 1; i < A.size(); i++) {
         A[i] = A[i-1] + D[i];
     }
 }
