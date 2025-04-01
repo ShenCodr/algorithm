@@ -1,26 +1,14 @@
 # 前缀和 (Prefix Sum)
 ### 一维前缀和
-**前缀和数组 S[i] 表示原数组 A[1..i] 的和**
 
-`S[0] = 0`
+`s[i+1]=s[i]+a[i]`
 
-`S[i] = S[i-1] + A[i] （i ≥ 1）`
+**a[left] 到 a[right] 的元素和等于s[right+1]−s[left]**
 
-**查询区间和：**
-**计算区间 [L, R] 的和：Sum = S[R] - S[L-1]**
+### 实现代码
 ```cpp
-int n = 5;
-int A[] = {0, 1, 2, 3, 4, 5}; // A[1..5]
-int S[6] = {0};
-
-void build_prefix() {
-    for (int i = 1; i <= n; i++) {
-        S[i] = S[i-1] + A[i];
-    }
-}
-
-int query(int L, int R) {
-    return S[R] - S[L-1];
+for (int i = 0; i < nums.size(); i++) {
+        s[i + 1] = s[i] + nums[i];
 }
 ```
 
