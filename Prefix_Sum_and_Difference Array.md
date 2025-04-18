@@ -1,5 +1,5 @@
 # 前缀和 (Prefix Sum)
-### 一维前缀和
+## 一维前缀和
 
 `s[i+1]=s[i]+a[i]`
 
@@ -12,8 +12,18 @@ for (int i = 0; i < nums.size(); i++) {
 }
 ```
 
-### 二维前缀和
-![image](https://github.com/user-attachments/assets/10e628c3-6a03-485f-bc5b-8cbfd0805cee)
+
+## 二维前缀和
+
+`s[i+1][j+1]`表示左上角为`a[0][0]`右下角为`a[i][j]`的子矩阵元素和
+
+**定义方法：** `s[i+1][j+1]=s[i+1][j]+s[i][j+1]-s[i][j]+a[i][j]`
+
+### 计算子矩阵之和：  
+
+**设子矩阵左上角为a[r1][c1],右下角为a[r2][c2]:**
+
+`sum=s[r2+1][c2+1]-s[r2+1][c1]-s[r1][c2+1]+s[r1][c1]`
 
 
 # 差分 (Difference Array)
