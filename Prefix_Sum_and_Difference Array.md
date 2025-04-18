@@ -12,6 +12,10 @@ for (int i = 0; i < nums.size(); i++) {
 }
 ```
 
+### 二维前缀和
+![image](https://github.com/user-attachments/assets/10e628c3-6a03-485f-bc5b-8cbfd0805cee)
+
+
 # 差分 (Difference Array)
 ###  一维差分
 **差分数组 D[i] 是原数组 A[i] 与 A[i-1] 的差值。**
